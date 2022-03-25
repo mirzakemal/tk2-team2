@@ -10,13 +10,19 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        setVariable();
+    }
+
+    public static void setVariable(){
         // write your code here
         Scanner input = new Scanner(System.in); //object scanner baru
-
+        System.out.println("Masukan nama anda [1-25]:");
         String nama = input.nextLine();
         if(nama.length() < 1 || nama.length() > 25) throw new RuntimeException("Range karakter yang diinput 1-25");
+        System.out.println("Masukan NIM anda [10]:");
         String nim = input.nextLine();
         if (nim.length() != 10 ) throw new RuntimeException("NIM harus memiliki 10 karakter");
+        System.out.println("Masukan sembarang angka:");
         int inputAngka = Integer.parseInt(input.nextLine());
         if(inputAngka < 5 || inputAngka > 20) throw new RuntimeException("Range angka yang diinput 5-20");
         int prev = 1;
@@ -62,5 +68,6 @@ public class Main {
         System.out.println("Hasil penjumlahan = " + jumlahFibonacci);
         System.out.println("Apakah anda ingin mengulang [y/t]");
         String ulang = input.nextLine();
+        if(ulang.equalsIgnoreCase("y"))setVariable();
     }
 }
